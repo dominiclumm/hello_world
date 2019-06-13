@@ -1,0 +1,13 @@
+---
+#pull montiros_pools_nodes from F5
+- name: Collect BIG-IP facts
+  bigip_device_facts:
+    gather_subset:
+      - monitors
+      - ltm-pools
+      - nodes
+    provider:
+      server: 10.80.2.204
+      user: admin
+      password: secret
+  delegate_to: localhost
